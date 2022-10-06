@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* ###############Utility classes################## */
+.container{
+    max-width: 1200px;
+    width:90%;
+    margin: auto;
+
+}
+.btn{
+    display: inline-block;
+    padding: 1em 2.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top:1em;
+}
+.btn-primary{
+    color:#fff;
+    background: #16a083;
+}
+
+/* ###############Navbar styling################# */
+/* for desktop mode */
+
+.navbar input[type="checkbox"], .navbar .hamburger-lines{
+    display: none;
+}
+.navbar{
+    position:fixed;
+    width:100%;
+    background-color: #fff;
+    color:#000;
+    opacity:0.85;
+    z-index:999;
+}
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:64px;
+}
+ul{
+    display: flex;
+    order:2;
+}
+ul li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.8rem;
+}
+.logo{
+    height:100%;
+    order:1;
+}
+.logo img{
+    height:100%;
+}
+.navbar a{
+    text-decoration: none;
+    color:#444;
+    transition:color 0.4s ease-in-out;
+
+}
+.navbar a:hover{
+    color:#117964;
+}
+
+/* ################showcase area################# */
+.showcase-area{
+    background: url("./img/header-image2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    
+}
+.showcase-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size:1.6rem;
+    
+}    
+    
+/* ###############About us#####################   */
+.about-section{
+    padding: 50px 0;
+    background-color: #f5f5f7;
+}
+.about-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.about-img{
+    height:350px;
+    flex: 1 1 300px;
+    padding:30px;
+    transform: translateX(150%);
+    animation: about-img-animation 1s ease-in-out forwards;
+
+}
+@keyframes about-img-animation{
+    100%{
+        transform: translate(0);
+
+    }
+}
+.about-text{
+    height:350px;
+    flex: 1 1 300px;
+    padding:30px;
+    transform: translateX(-150%);
+    animation: about-text-animation 1s ease-in-out forwards;
+    /* flex:1 1 300px; */
+}
+@keyframes about-text-animation{
+    100%{
+        transform: translate(0);
+
+    }
+}
+.about-img img{
+    display:block;
+    max-width:300px;
+    height:350px;
+    margin:auto;
+    object-fit:cover;
+    /* height: 100%; */
+}
+.about-text h1{
+    font-size: 3.2rem;
+
+}
+.about-text p{
+    font-size:2rem;
+}
+
+/* #######################Food section##################### */
+.food-title{
+    text-align: center;
+    padding: 50px 0;
+    font-size: 2.5rem;
+
+}
+.food-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+.img-container{
+    
+    max-width:300px;
+    height:300px;
+    margin:auto;
+    padding:10px;
+    position:relative;
+}
+.img-container img{
+    /* display:inline-block; */
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position: center;
+    
+
+}
+.food-type{
+    margin:auto;
+}
+.img-content{
+    position:absolute;
+    top:70%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.4s ease-in-out 0.1s;
+    z-index:2;
+    opacity: 0;
+    text-align: center;
+    
+}
+
+.img-content h2{
+    font-size: 3rem;
+    color: #fff;
+
+}
+.img-container:hover .img-content{
+    opacity:1;
+    top:40%;
+}
+
+.img-container::after{
+    display: block;
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    border: 2px solid green;
+    width: 100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.577);
+    z-index:1;
+    opacity:0;
+    transform :scaleY(0);
+    transform-origin: 100% 100%;
+    transition: all 0.4s ease-in-out;
+    
+
+}
+.img-container:hover::after{
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* ###############Food Menu###################### */
+.food-menu-title{
+    font-size: 2em;
+    padding: 50px;
+    text-align: center;
+    
+}
+.food-menu-container{
+    display:flex;
+    /* justify-content: space-between;
+    align-items: center; */
+    flex-wrap: wrap;
+}
+.food-menu-item{
+    display:flex;
+    flex:1 1 600px;
+    justify-content:space-evenly;
+    align-items: center; 
+  
+}
+.food-img{
+    width:300px;
+    height:300px;
+    padding:15px;
+}
+.food-img img{
+    display: block;
+    width:250px;
+    height: 250px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position: center;
+    
+}
+/* ###################Contact################### */
+.contact-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom:50px;
+}
+.contact-img{
+    flex: 1 1 400px;
+    padding: 25px;
+    margin:auto;
+}
+.form-container{
+    flex:1 1 400px;
+    margin:auto;
+}
+.contact-img img{
+    width:100%;
+    height:400px;
+    object-fit: cover;
+    object-position: center;
+}
+.form-title{
+    font-size: 2em;
+    padding: 50px;
+    text-align: center;
+    
+}
+.form-container input{
+    display: block;
+    width:100%;
+    border:none;
+    border-bottom:2px solid #000;
+    padding:1rem 0;
+}
+.form-container textarea{
+    display: block;
+    width: 100%;
+}
+
+/* ###################footer################ */
+footer{
+    
+    background-color:black;
+    height: 40px;
+    width:100%;
+    
+}
+footer h2 {
+    text-align: center;
+    color: #fff;
+}
